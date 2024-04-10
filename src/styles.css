@@ -1,1 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('assets/CSS/common.css');
+@import url('assets/CSS/hearder.css');
+@import url('assets/CSS/homepage.css');

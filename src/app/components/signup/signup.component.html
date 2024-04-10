@@ -1,0 +1,317 @@
+
+<!--Main Navigation-->
+<header>
+    <!-- Jumbotron -->
+    <div class="p-3 text-center bg-white border-bottom">
+      <div class="container">
+        <div class="row gy-3">
+          <!-- Left elements -->
+          <div class="col-lg-1 col-sm-10 col-12">
+            <a href="https://mdbootstrap.com/" target="_blank" class="float-start">
+              <img class="img1" src="../assets/Images/earth1.jpg" height="50" width="60"/><h1>EarthCon</h1></a>
+          </div>
+          <!-- Left elements -->
+  
+          <!-- Center elements -->
+          <div class="order-lg-last col-lg-12 col-sm-8 col-8">
+            <div class="d-flex float-end">
+                <a class="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center" target="_blank"  routerLink="../signup" > <i class="fa fa-user alt m-1 me-md-2"></i><p class="d-none d-md-block mb-0">Register</p> </a>
+              <a href="" class="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center" target="_blank" routerLink="../login"> <i class="fa fa-user alt m-1 me-md-2"></i><p class="d-none d-md-block mb-0">Sign in</p> </a>
+              <a href="#" class="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center" target="_blank"> <i class="fa fa-heart m-1 me-md-2"></i><p class="d-none d-md-block mb-0">Wishlist</p> </a>
+              <a href="#" class="border rounded py-1 px-3 nav-link d-flex align-items-center" target="_blank"> <i class="fa fa-shopping-cart m-1 me-md-2"></i><p class="d-none d-md-block mb-0">My cart</p> </a>
+             <!-- <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center" target="_blank"> <i class="fa fa-heart m-1 me-md-2"></i><p class="d-none d-md-block mb-0">Wishlist</p> </a>
+              <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="border rounded py-1 px-3 nav-link d-flex align-items-center" target="_blank"> <i class="fa fa-shopping-cart m-1 me-md-2"></i><p class="d-none d-md-block mb-0">My cart</p> </a>-->
+            </div>
+          </div>
+          <!-- Center elements -->
+  
+          <!-- Right elements -->
+          <div class="col-lg-8 col-md-12 col-12">
+            <div class="d-flex justify-content-center h-100">
+            <div class="searchbar">
+              <input class="search_input" type="text" name="" placeholder="Search...">
+              <a href="#" class="search_icon"><i class="fa fa-search"></i></a>
+            </div>
+          </div>
+          </div>
+
+         
+
+          <!-- Right elements -->
+        </div>
+      </div>
+    </div>
+    <!-- Jumbotron -->
+  
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <!-- Container wrapper -->
+      <div class="container justify-content-center justify-content-md-between">
+        <!-- Toggle button -->
+        <button
+                class="navbar-toggler border py-2 text-dark"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#navbarLeftAlignExample"
+                aria-controls="navbarLeftAlignExample"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                >
+          <i class="fas fa-bars"></i>
+        </button>
+  
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarLeftAlignExample">
+          <!-- Left links -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link text-dark" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#">Hot offers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#">Gift boxes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#">Menu item</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#">Menu name</a>
+            </li>
+            <!-- Navbar dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                Others
+              </a>
+              <!-- Dropdown menu -->
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="#">Action</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Another action</a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <!-- Left links -->
+        </div>
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+  </header>
+
+<div class="outer">
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-md-4 offset-md-3">
+                <div class="panel border bg-white">
+                    <div class="panel-heading">
+                        <h3 class="pt-3 font-weight-bold">Sign Up</h3>
+                    </div>
+                    <div class="panel-body p-3">
+                        <form [formGroup]="signUpForm"  >
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpForm.controls['firstName'].dirty && signUpForm.hasError('required','firstName')">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input ngModel formControlName="firstName" type="text" placeholder="FirstName">
+                                </div>
+                            </div>
+                            <small  *ngIf="signUpForm.controls['firstName'].dirty && signUpForm.hasError('required','firstName')" class="text-danger">*FirstName is required</small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpForm.controls['lastName'].dirty && signUpForm.hasError('required','lastName')">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input formControlName="lastName" type="text" placeholder="LastName">
+                                </div>
+                            </div>
+                            <small  *ngIf="signUpForm.controls['lastName'].dirty && signUpForm.hasError('required','lastName')" class="text-danger" class="text-danger">*LastName name is required</small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpForm.controls['email'].dirty && signUpForm.hasError('required','email')">
+                                    <span class=" fa fa-sharp fa-solid fa-envelope p-2"></span>
+                                    <input formControlName="email" type="text" placeholder="Email">
+                                </div>
+                            </div>
+                            <small  *ngIf="signUpForm.controls['email'].dirty && signUpForm.hasError('required','email')" class="text-danger" class="text-danger">*Email is required</small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpForm.controls['userName'].dirty && signUpForm.hasError('required','userName')">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input formControlName="userName" type="text" placeholder="Username">
+                                </div>
+                            </div>
+                            <small  *ngIf="signUpForm.controls['userName'].dirty && signUpForm.hasError('required','userName')" class="text-danger" class="text-danger">*Username is required</small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpForm.controls['password'].dirty && signUpForm.hasError('required','password')">
+                                    <span class="fa fa-lock p-2"></span>
+                                    <input formControlName="password" [type]="type" placeholder="Password">
+                                    <span (click)="hideShowPass()" class=" fa {{eyeIcon}}"></span>
+                                </div>
+                            </div>
+                            <small  *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('required','password')" class="text-danger" class="text-danger">*Password is required</small>
+                            
+                            <button type="submit" (click)="onSignup()"  class="btn btn-primary btn-block mt-4 w-100" >Sign Up</button>
+                            <div class="text-center pt-4 text-muted font-weight-bold ">Already have an account?<a id="forget" routerLink="/login">Login</a></div>
+                        </form>
+                    </div>
+                    <!-- <div class="mx-3 my-2 py-2 bordert">
+                        <div class="text-center py-3">
+                           <a href="https://www.facebook.com" target="_blank" class="px-2"><img src="assets/img/facebook-logo.jpg" alt=""></a>
+                            <a href="https://www.google.com" target="_blank" class="px-2"><img src="assets/img/google-logo.jpg" alt=""></a>
+                            <a href="https://www.github.com" target="_blank" class="px-2"><img src="assets/img/GitHub-Mark.jpg" alt=""></a>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start text-muted mt-3" style="background-color: #f5f5f5;">
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start pt-4 pb-4">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-12 col-lg-3 col-sm-12 mb-2">
+            <!-- Content -->
+            <a href="https://mdbootstrap.com/" target="_blank" class="">
+              <img src="../assets/Images/earth1.jpg" height="35" />
+            </a>
+            <p class="mt-2 text-dark">
+              © 2023 Copyright: EarthCon.com
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-6 col-sm-4 col-lg-2">
+            <!-- Links -->
+            <h6 class="text-uppercase text-dark fw-bold mb-2">
+              Store
+            </h6>
+            <ul class="list-unstyled mb-4">
+              <li><a class="text-muted" href="#">About us</a></li>
+              <li><a class="text-muted" href="#">Find store</a></li>
+              <li><a class="text-muted" href="#">Categories</a></li>
+              <li><a class="text-muted" href="#">Blogs</a></li>
+            </ul>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-6 col-sm-4 col-lg-2">
+            <!-- Links -->
+            <h6 class="text-uppercase text-dark fw-bold mb-2">
+              Information
+            </h6>
+            <ul class="list-unstyled mb-4">
+              <li><a class="text-muted" href="#">Help center</a></li>
+              <li><a class="text-muted" href="#">Money refund</a></li>
+              <li><a class="text-muted" href="#">Shipping info</a></li>
+              <li><a class="text-muted" href="#">Refunds</a></li>
+            </ul>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-6 col-sm-4 col-lg-2">
+            <!-- Links -->
+            <h6 class="text-uppercase text-dark fw-bold mb-2">
+              Support
+            </h6>
+            <ul class="list-unstyled mb-4">
+              <li><a class="text-muted" href="#">Help center</a></li>
+              <li><a class="text-muted" href="#">Documents</a></li>
+              <li><a class="text-muted" href="#">Account restore</a></li>
+              <li><a class="text-muted" href="#">My orders</a></li>
+            </ul>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-12 col-sm-12 col-lg-3">
+            <!-- Links -->
+            <h6 class="text-uppercase text-dark fw-bold mb-2">Newsletter</h6>
+            <p class="text-muted">Stay in touch with latest updates about our products and offers</p>
+            <div class="input-group mb-4">
+              <input type="email" class="form-control border" placeholder="Email" aria-label="Email" aria-describedby="button-addon2" />
+              <button class="btn btn-light border shadow-0" type="button" id="button-addon2" data-mdb-ripple-color="dark">
+                Join
+              </button>
+            </div>
+          </div>
+
+         
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+  
+    <div class="">
+      <div class="container">
+        <div class="d-flex justify-content-between py-4 border-top">
+          <!--- payment --->
+          <div>
+            <i class="fab fa-lg fa-cc-visa text-dark"></i>
+            <i class="fab fa-lg fa-cc-amex text-dark"></i>
+            <i class="fab fa-lg fa-cc-mastercard text-dark"></i>
+            <i class="fab fa-lg fa-cc-paypal text-dark"></i>
+          </div>
+          <!--- payment --->
+  
+          <!--- language selector --->
+          <div class="dropdown dropup">
+            <a class="dropdown-toggle text-dark" href="#" id="Dropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false"> <i class="flag-united-kingdom flag m-0 me-1"></i>English </a>
+  
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="Dropdown">
+              <li>
+                <a class="dropdown-item" href="#"><i class="flag-united-kingdom flag"></i>English <i class="fa fa-check text-success ms-2"></i></a>
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="flag-poland flag"></i>Polski</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="flag-china flag"></i>中文</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="flag-japan flag"></i>日本語</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="flag-germany flag"></i>Deutsch</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="flag-france flag"></i>Français</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="flag-spain flag"></i>Español</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="flag-russia flag"></i>Русский</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="flag-portugal flag"></i>Português</a>
+              </li>
+            </ul>
+          </div>
+          <!--- language selector --->
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer -->
